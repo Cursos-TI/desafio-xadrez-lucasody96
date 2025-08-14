@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Xadrez (GCC)",
+            "type": "cppdbg",
+            "request": "launch",
+            // Aponta para o programa que será criado pela tarefa de build
+            "program": "${workspaceFolder}/xadrez",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            // Diz ao depurador para executar nossa tarefa de build primeiro
+            "preLaunchTask": "Build Xadrez with GCC"
+        }
+    ]
+}
