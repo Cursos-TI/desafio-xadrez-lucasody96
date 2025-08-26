@@ -7,7 +7,7 @@
 int main() {
     // Nível Novato - Movimentação das Peças
     // Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int i, movimentacaoPeca;
+    int i;
     char pecaSelecionada;
 
     // Introdução do jogo
@@ -22,82 +22,59 @@ int main() {
     printf("[T]. Torre\n");
     printf("[B]. Bispo\n");
     printf("[R]. Rainha\n");
-
-    printf("Qual é a peça que você quer mover? ");
-    scanf("%c", &pecaSelecionada);
-
     //A partir da peça selecionada pelo usuário, será solicitado quantas casas a peça será movida
+
+    printf("Qual é a peça que você quer mover? "); // Adicionei essa linha para ficar mais claro
+    scanf(" %c", &pecaSelecionada);
+    // =========================================================
     switch (pecaSelecionada)
     {
     case 'T':
         // Implementação de Movimentação da Torre
         // Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-        printf("\nVocê pode mover a peça selecionada [Torre] para a direita. É possível mover até 7 posições a direita. Informe um número de 1 a 7 referente a quantidade de casas a direita que deseja mover? ");
-        scanf("%d", &movimentacaoPeca);
-
-        if ((movimentacaoPeca < 1) || (movimentacaoPeca > 7)){
-            printf("Número de casas para a movimentação da peça incorreta, programa sendo encerrado...\n");
-            return 1;
-        }else
+        printf("\nVocê selecionou a [Torre], segue a movimentação da Torre: ");
+       
+        i = 0;//posição inicial da peça
+        while (i < 5)
         {
-            i = 1;//posição inicial da peça
-            while (i <= movimentacaoPeca)
-            {
-                printf ("\nTorre foi movida para a direita da posição [%d] para a posição [%d]\n", i, i+1);
-                i++;
-            }
-            
-
+            printf ("\nDireita");
+            i++;
         }
+      
+        printf("\n");
         break;
 
      case 'B':
 
         // Implementação de Movimentação do Bispo
         // Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-        printf("\nVocê pode mover a peça selecionada [Bispo] na diagonal (para cima e a direita). É possível mover até 7 posições na diagonal. Informe um número de 1 a 7 referente a quantidade de posições na diagonal que deseja mover? ");
-        scanf("%d", &movimentacaoPeca);
-
-        if ((movimentacaoPeca < 1) || (movimentacaoPeca > 7)){
-            printf("Número de casas para a movimentação da peça incorreta, programa sendo encerrado...\n");
-            return 1;
-        }else
+        printf("\nVocê selecionou o [Bispo]. Segue a movimentação do Bispo:");
+        
+        i = 0;//posição inicial da peça
+        do
         {
-            
-            i = 1;//posição inicial da peça
+            printf ("\nCima direita");
+            i++;
 
-            do
-            {
-                printf ("\nBispo foi movido para a diagonal da posição [%d] para a posição [%d]\n", i, i+1);
-                i++;
+        } while (i < 5);
 
-            } while (i <= movimentacaoPeca);
-
-        }
-
+        printf("\n");
         break;
 
      case 'R':
         
         // Implementação de Movimentação da Rainha
         // Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-        printf("\nVocê pode mover a peça selecionada [Rainha] para a esquerda. É possível mover até 7 posições para a esquerda. Informe um número de 1 a 7 referente a quantidade de posições para a esquerda que deseja mover? ");
-        scanf("%d", &movimentacaoPeca);
-
-         if ((movimentacaoPeca < 1) || (movimentacaoPeca > 7)){
-            printf("Número de casas para a movimentação da peça incorreta, programa sendo encerrado...\n");
-            return 1;
-        }else
+        printf("\nVocê selecionou a [Rainha]. Segue movimentação da rainha: ");
+       
+        for (i = 7; i >= 0; i--)
         {
-
-            for (i = 8; i > 8 - movimentacaoPeca; i--)
-            {
-                printf ("\nRainha foi movido para a esquerda da posição [%d] para a posição [%d]\n", i, i-1);
-            }
-
-               
+            printf ("\nEsquerda");
         }
 
+             
+
+        printf("\n");
         break;
     
     default:
