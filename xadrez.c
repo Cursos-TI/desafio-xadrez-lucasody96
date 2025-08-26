@@ -7,7 +7,7 @@
 int main() {
     // Nível Novato - Movimentação das Peças
     // Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-    int i;
+    int i, j;
     char pecaSelecionada;
 
     // Introdução do jogo
@@ -21,7 +21,9 @@ int main() {
     printf("Selecione a peça que irá ser jogada: \n");
     printf("[T]. Torre\n");
     printf("[B]. Bispo\n");
+    printf("[C]. Cavalo\n");
     printf("[R]. Rainha\n");
+
     //A partir da peça selecionada pelo usuário, será solicitado quantas casas a peça será movida
 
     printf("Qual é a peça que você quer mover? "); // Adicionei essa linha para ficar mais claro
@@ -67,7 +69,7 @@ int main() {
         // Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
         printf("\nVocê selecionou a [Rainha]. Segue movimentação da rainha: ");
        
-        for (i = 7; i >= 0; i--)
+        for (i = 0; i < 8; i++)
         {
             printf ("\nEsquerda");
         }
@@ -77,6 +79,25 @@ int main() {
         printf("\n");
         break;
     
+     case 'C':
+        
+        // Utilize loops aninhados para simular a movimentação do Cavalo em L.
+        // loop pode representar a movimentação horizontal e outro vertical.
+        printf("\nVocê selecionou o [Cavalo]. Segue movimentação do Cavalo: ");
+       
+        i = 1;
+        while (i--)
+        {
+             for (j = 0; j < 2; j++)
+            {
+               printf("\nbaixo");
+            }
+            printf("\nesquerda");
+        }
+        
+
+        printf("\n");
+        break;   
     default:
 
         printf("Opção selecionada inválida, programa sendo encerrado...\n");
@@ -84,13 +105,6 @@ int main() {
 
         break;
     }
-
-    
-    
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
