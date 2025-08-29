@@ -1,8 +1,42 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+void moverTorre(int posicoes){
+    if (posicoes > 0)
+    {
+        printf ("\nDireita");
+        moverTorre(posicoes - 1);
+    }
+    
+}
+
+void moverBispo(int posicoes){
+    
+    for (int i = 0; i < posicoes; i++)
+    {
+
+        printf ("Cima - ");
+
+        for (int j = 0; j < posicoes; j++)
+        {
+            printf("direita\n");
+            break;//o segredo para que faça corretamente. O programa entra no loop e ja saí, logo vai escrever 5 vezes o cima e 5 vezes o direita. Se não fosse isso iria escrever 25x direita.
+        }
+        
+    }
+    
+}
+
+
+void moverRainha(int posicoes){
+    if (posicoes > 0)
+    {
+        printf ("\nEsquerda");
+        moverRainha(posicoes - 1);
+    }
+    
+}
+
+
 
 int main() {
     // Nível Novato - Movimentação das Peças
@@ -36,12 +70,7 @@ int main() {
         // Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
         printf("\nVocê selecionou a [Torre], segue a movimentação da Torre: ");
        
-        i = 0;//posição inicial da peça
-        while (i < 5)
-        {
-            printf ("\nDireita");
-            i++;
-        }
+        moverTorre(5);
       
         printf("\n");
         break;
@@ -50,15 +79,8 @@ int main() {
 
         // Implementação de Movimentação do Bispo
         // Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-        printf("\nVocê selecionou o [Bispo]. Segue a movimentação do Bispo:");
-        
-        i = 0;//posição inicial da peça
-        do
-        {
-            printf ("\nCima direita");
-            i++;
-
-        } while (i < 5);
+       
+        moverBispo(5);
 
         printf("\n");
         break;
@@ -69,12 +91,7 @@ int main() {
         // Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
         printf("\nVocê selecionou a [Rainha]. Segue movimentação da rainha: ");
        
-        for (i = 0; i < 8; i++)
-        {
-            printf ("\nEsquerda");
-        }
-
-             
+        moverRainha(8);
 
         printf("\n");
         break;
@@ -90,9 +107,9 @@ int main() {
         {
              for (j = 0; j < 2; j++)
             {
-               printf("\nbaixo");
+               printf("\ncima");
             }
-            printf("\nesquerda");
+            printf("\ndireita");
         }
         
 
